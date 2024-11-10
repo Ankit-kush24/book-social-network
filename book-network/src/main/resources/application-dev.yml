@@ -1,0 +1,45 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/book_social_network
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ankitkushwah45242@gmail.com
+    password: jgne buga yvbx aqgj  # Your actual password or app password
+    protocol: smtp
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true      # Ensure STARTTLS is enabled
+      mail.smtp.starttls.required: true    # Enforce STARTTLS connection
+      mail.smtp.timeout: 5000              # Timeout for the connection
+      mail.smtp.connectiontimeout: 5000    # Timeout for connection establishment
+      mail.smtp.writetimeout: 5000         # Timeout for writing data
+      mail.debug: true
+
+application:
+  security:
+    jwt:
+#      secret-key: 9QoQUSS6GDT5WxyGY1y4PAQsnYRNO54q
+      secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645267566B5970
+      expiration: 8640000
+  mailing:
+    frontend:
+      activation-url: http://localhost:4200/activate-account
+  file:
+    uploads:
+      photos-output-path: ./uploads
+
+server:
+  port: 8088
