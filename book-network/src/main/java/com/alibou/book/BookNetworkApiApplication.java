@@ -14,6 +14,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @EnableAsync
 public class BookNetworkApiApplication {
 //jgne buga yvbx aqgj
+
     public static void main(String[] args) {
         SpringApplication.run(BookNetworkApiApplication.class, args);
     }
@@ -25,5 +26,6 @@ public class BookNetworkApiApplication {
                 roleRepository.save(Role.builder().name("USER").build());
             }
         };
+
     }
 }
